@@ -13,3 +13,15 @@ End the log with your plan for what to try next.
 - validation: 0.000 (before: 0.000)
 - what it means: what you think the result says
 -->
+
+## 2026-11-10 baseline (Track A)
+- changed: Trained the starter recipe with seeds 0 and 1.
+- why:
+- validation: 0.4894 (seed 0); 0.4912 (seed 1)
+- what it means:
+
+## 2026-11-10 b1 (Track B)
+- changed: Trained `src/train_b.py` as provided with its default ResNet18 at 224 pixels for 4 epochs; saved the submission.
+- why:
+- validation: 0.5013
+- what it means:
