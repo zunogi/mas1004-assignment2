@@ -105,6 +105,8 @@ def run_key(line, words):
     if "--recipe-dir" in words:
         recipe_dir = Path(words[words.index("--recipe-dir") + 1])
         paths.extend(str(recipe_dir / name) for name in ("recipe.py", "selection.csv"))
+    if "--selection" in words:
+        paths.append(words[words.index("--selection") + 1])
     if Path(words[1]).name == "check_submission.py":
         paths += ["submission/model.onnx", "submission/submission.json"]
     for path in paths:

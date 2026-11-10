@@ -1,5 +1,1 @@
-python src/official.py --tag curated
-python src/train_b.py --tag b2 --model mobilenet_v3_large --size 320 --epochs 6 --balance --submit
-python src/check_submission.py --no-val
-python src/official_variant.py --recipe-dir track_a/variants/noflip --tag noflip
-python src/official_variant.py --recipe-dir track_a/variants/balanced --tag balanced
+python src/official_variant.py --recipe-dir track_a/variants/balanced --selection track_a/selection.csv --data data/starter --tag balanced_curated
