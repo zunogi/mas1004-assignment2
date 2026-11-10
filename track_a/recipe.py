@@ -14,9 +14,10 @@ What you cannot change, because official.py decides it:
   - the image size the model sees, 224 x 224
   - mixed precision (float16), and the seed
 
-This is the recipe the starter code came with. It is the baseline on the
-leaderboard.
+This recipe draws each city equally often.
 """
+
+import collections
 
 import torch
 import torch.nn.functional as F
@@ -47,7 +48,8 @@ def sample_weights(cities, paths):
     is drawn twice as often as one with weight 1. Return None to go through
     the selection in a new random order each time, every photo once per round.
     """
-    return None
+    counts = collections.Counter(cities)
+    return [1.0 / counts[c] for c in cities]
 
 
 def make_optimizer(model):
